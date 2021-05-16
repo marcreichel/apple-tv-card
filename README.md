@@ -25,11 +25,6 @@ Go to the project directory
 Open `index.html` in your browser.
 
 
-## Roadmap
-
-* [ ] Add touch support
-
-
 ## Contributing
 
 Contributions are always welcome!
