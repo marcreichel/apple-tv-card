@@ -1,0 +1,48 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    perspective: 30rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card {
+    display: grid;
+    place-items: center;
+    color: white;
+    width: 300px;
+    height: 175px;
+    background-image: linear-gradient(to bottom, #555, #000);
+    border-radius: 1.5rem;
+    box-shadow: 0 .25rem .25rem 0 #0002;
+    transform-origin: 50% 50%;
+    transition: transform 50ms ease-in-out, box-shadow 75ms ease-in-out;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    position: relative;
+}
+
+.card > .reflection {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    pointer-events: none;
+    background-image: radial-gradient(#fff5, transparent 70%);
+    transform: translateY(-100%);
+}
+
+.card > .paralax-content {
+    pointer-events: none;
+    transition: transform 50ms ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 1.5rem 2rem .25rem #0005;
+}
