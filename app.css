@@ -37,10 +37,10 @@ body {
 
 .card > .reflection {
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 450px;
+    height: 450px;
     pointer-events: none;
-    background-image: radial-gradient(#fff5, transparent 70%);
+    background-image: radial-gradient(#fff8, transparent 70%);
     transform: translateY(-100%);
 }
 

@@ -46,7 +46,7 @@ function handleMove(event) {
     const reflection = card.querySelector('.reflection');
 
     if (reflection) {
-        reflection.style.transform = 'translateY(calc(-' + (height / 2) + 'px + ' + (angleX) + 'em)) translateX(' + (angleY * -1) + 'em)';
+        reflection.style.transform = 'translateY(calc(-' + (height / 2) + 'px + ' + (angleX * -1) + 'em)) translateX(' + (angleY) + 'em)';
     }
 }
 
