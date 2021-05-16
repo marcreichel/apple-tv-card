@@ -29,7 +29,7 @@ body {
     border-radius: 1.5rem;
     box-shadow: 0 .25rem .25rem 0 #0002;
     transform-origin: 50% 50%;
-    transition: transform 50ms ease-in-out, box-shadow 75ms ease-in-out;
+    transition: all 50ms ease-in-out;
     transform-style: preserve-3d;
     overflow: hidden;
     position: relative;
