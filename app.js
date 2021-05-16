@@ -33,8 +33,8 @@ function handleMove(event) {
 
     const width = card.clientWidth;
     const height = card.clientHeight;
-    const angleY = (width / 2 - posX) * -1 / width * 15;
-    const angleX = (height / 2 - posY) / height * 15;
+    const angleY = (width / 2 - posX) / width * 15;
+    const angleX = (height / 2 - posY) * -1 / height * 15;
     card.style.transform = 'scale(1.15) rotateY(' + angleY + 'deg) rotateX(' + angleX + 'deg)';
 
     const paralaxContent = card.querySelector('.paralax-content');
@@ -46,7 +46,7 @@ function handleMove(event) {
     const reflection = card.querySelector('.reflection');
 
     if (reflection) {
-        reflection.style.transform = 'translateY(calc(-' + (height / 2) + 'px + ' + (angleX * -1) + 'em)) translateX(' + (angleY) + 'em)';
+        reflection.style.transform = 'translateY(calc(-' + (height / 2) + 'px + ' + (angleX) + 'em)) translateX(' + (angleY * -1) + 'em)';
     }
 }
 
