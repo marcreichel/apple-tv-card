@@ -1,7 +1,13 @@
 {
   "name": "apple-tv-card",
-  "version": "0.1.0",
   "description": "An Apple TV Card/Widget with hover animation written in JavaScript and CSS",
+  "keywords": [
+    "apple-tv",
+    "css",
+    "javascript",
+    "widget",
+    "card"
+  ],
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "test": "echo \"No test specified\""

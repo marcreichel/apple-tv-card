@@ -47,7 +47,7 @@ import './styles.scss';
         const angleX = (height / 2 - posY) * -1 / height * 10;
         const translateX = ((width / 2 - posX)) * -1 / width * 10;
         const translateY = ((height / 2 - posY)) * -1 / height * 10;
-        this.style.transform = 'scale(1.15) rotateY(' + angleY + 'deg) rotateX(' + angleX + 'deg) translateX(' + translateX + 'px) translateY(' + translateY + 'px)';
+        this.style.transform = 'translateZ(6rem) rotateY(' + angleY + 'deg) rotateX(' + angleX + 'deg) translateX(' + translateX + 'px) translateY(' + translateY + 'px)';
 
         const paralaxContent = this.querySelector('.paralax-content');
 
