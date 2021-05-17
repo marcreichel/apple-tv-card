@@ -1,3 +1,5 @@
+import './styles.scss';
+
 (function() {
     document.querySelectorAll('.apple-tv-card').forEach(card => {
         card.addEventListener('mouseenter', handleMove, false);

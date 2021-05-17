@@ -1,28 +1,40 @@
 # Apple TV Card (with JavaScript and CSS)
 
+[![Gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg)](https://gitmoji.dev)
+
 An Apple TV Card/Widget with hover animation written in JavaScript and CSS.
 
 
 ## Demo
 
+![Animation](docs/demo.gif)
+
 [Live-Demo](https://marcreichel.github.io/apple-tv-card/)
 
 
-## Run Locally
+## Installation
 
-Clone the project
-
+Install via npm:
 ```bash
-  git clone https://github.com/marcreichel/apple-tv-card.git
+  npm install apple-tv-card
 ```
 
-Go to the project directory
+or yarn:
 
 ```bash
-  cd apple-tv-card
+  yarn add apple-tv-card
 ```
 
-Open `index.html` in your browser.
+
+## Setup
+
+
+_More info coming soon_
+
+
+## Authors
+
+- [@marcreichel](https://www.github.com/marcreichel)
 
 
 ## Contributing
