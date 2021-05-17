@@ -13,42 +13,10 @@ body {
     display: grid;
     place-items: center;
     min-height: 100vh;
-    perspective: 30rem;
     background: #f1f1f1;
     font-family: 'Roboto', sans-serif;
-    overflow: hidden;
 }
 
-.card {
-    display: grid;
-    place-items: center;
-    color: white;
+.container {
     width: 300px;
-    height: 175px;
-    background-image: linear-gradient(to bottom, #555, #000);
-    border-radius: 1.5rem;
-    box-shadow: 0 .25rem .25rem 0 #0002;
-    transform-origin: 50% 50%;
-    transition: all 50ms ease-in-out;
-    transform-style: preserve-3d;
-    overflow: hidden;
-    position: relative;
-}
-
-.card > .reflection {
-    position: absolute;
-    width: 450px;
-    height: 450px;
-    pointer-events: none;
-    background-image: radial-gradient(#fff8, transparent 70%);
-    transform: translateY(-100%);
-}
-
-.card > .paralax-content {
-    pointer-events: none;
-    transition: transform 50ms ease-in-out;
-}
-
-.card.hover {
-    box-shadow: 0 1.5rem 2rem .25rem #0005;
 }
