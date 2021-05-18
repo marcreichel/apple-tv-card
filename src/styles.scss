@@ -1,5 +1,11 @@
 .apple-tv-card-container {
     perspective: 50rem;
+    position: relative;
+    margin-bottom: 2.5rem;
+
+    &.no-title {
+        margin-bottom: 0;
+    }
 
     & > .apple-tv-card {
         width: 100%;
@@ -13,6 +19,11 @@
 
         &.hover {
             box-shadow: 0 1.5rem 2rem .25rem #0005;
+
+            & + .apple-tv-card-title {
+                top: 110%;
+                opacity: 1;
+            }
         }
 
         & > .reflection {
@@ -40,6 +51,23 @@
             pointer-events: none;
             transition: transform 50ms ease-in-out;
             z-index: 1;
+        }
+    }
+
+    & > .apple-tv-card-title {
+        position: absolute;
+        pointer-events: none;
+        top: 106%;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        text-align: center;
+        font-size: 1.1em;
+        transition: opacity 120ms ease-in-out, top 120ms ease-in-out;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+        &.always-visible {
+            opacity: 1;
         }
     }
 }
