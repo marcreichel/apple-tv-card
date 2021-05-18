@@ -53,12 +53,12 @@ import './styles.scss';
         const angleX = (height / 2 - posY) * -1 / height * 10;
         const translateX = ((width / 2 - posX)) * -1 / width * 10;
         const translateY = ((height / 2 - posY)) * -1 / height * 10;
-        element.style.transform = 'translateZ(4rem) rotateY(' + angleY + 'deg) rotateX(' + angleX + 'deg) translateX(' + translateX + 'px) translateY(' + translateY + 'px)';
+        element.style.transform = 'perspective(' + (width * 2) + 'px) translateZ(4rem) rotateY(' + angleY + 'deg) rotateX(' + angleX + 'deg) translateX(' + translateX + 'px) translateY(' + translateY + 'px)';
 
         const paralaxContent = element.querySelector('.paralax-content');
 
         if (paralaxContent) {
-            paralaxContent.style.transform = 'translateX(' + (angleY * .4) + '%) translateY(' + (angleX * -.4) + '%)';
+            paralaxContent.style.transform = 'translateX(' + (translateX * -.65) + 'px) translateY(' + (translateY * -.65) + 'px)';
         }
 
         const reflection = element.querySelector('.reflection');
