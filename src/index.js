@@ -19,7 +19,9 @@ import './styles.scss';
 
         element.classList.add('hover');
 
-        if (!element.querySelector('.reflection')) {
+        const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+        if (!element.querySelector('.reflection') && mediaQuery && !mediaQuery.matches) {
             const reflection = document.createElement('span');
             reflection.classList.add('reflection');
             element.prepend(reflection);
@@ -53,17 +55,22 @@ import './styles.scss';
         const angleX = (height / 2 - posY) * -1 / height * 10;
         const translateX = ((width / 2 - posX)) * -1 / width * 10;
         const translateY = ((height / 2 - posY)) * -1 / height * 10;
-        element.style.transform = 'perspective(' + (width * 2) + 'px) translateZ(4rem) rotateY(' + angleY + 'deg) rotateX(' + angleX + 'deg) translateX(' + translateX + 'px) translateY(' + translateY + 'px)';
+
+        if (!mediaQuery || mediaQuery.matches) {
+            element.style.transform = 'perspective(' + (width * 2) + 'px) translateZ(4rem)';
+        } else {
+            element.style.transform = 'perspective(' + (width * 2) + 'px) translateZ(4rem) rotateY(' + angleY + 'deg) rotateX(' + angleX + 'deg) translateX(' + translateX + 'px) translateY(' + translateY + 'px)';
+        }
 
         const paralaxContent = element.querySelector('.paralax-content');
 
-        if (paralaxContent) {
+        if (paralaxContent && mediaQuery && !mediaQuery.matches) {
             paralaxContent.style.transform = 'translateX(' + (translateX * -.65) + 'px) translateY(' + (translateY * -.65) + 'px)';
         }
 
         const reflection = element.querySelector('.reflection');
 
-        if (reflection) {
+        if (reflection && mediaQuery && !mediaQuery.matches) {
             reflection.style.transform = 'translateY(' + (posY - (height / 2)) + 'px) translateX(' + ((width * .1) + (posX * .8)) + 'px)';
         }
     }

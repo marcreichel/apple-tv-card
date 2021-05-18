@@ -16,6 +16,10 @@
         overflow: hidden;
         position: relative;
 
+        @media (prefers-reduced-motion: reduce) {
+            transition: none;
+        }
+
         &.hover {
             box-shadow: 0 1.5rem 2rem .25rem #0005;
 
@@ -33,7 +37,7 @@
             padding-bottom: 150%;
             margin: -75% 0 0 -75%;
             pointer-events: none;
-            background-image: radial-gradient(#fff8, transparent 70%);
+            background-image: radial-gradient(#fff5, transparent 70%);
             transform: translateY(-100%);
             z-index: 2;
         }
@@ -59,6 +63,10 @@
             background-repeat: no-repeat;
             transition: transform 50ms ease-in-out;
             z-index: 1;
+
+            @media (prefers-reduced-motion: reduce) {
+                transition: none;
+            }
         }
     }
 
@@ -73,6 +81,10 @@
         font-size: 1.1rem;
         transition: opacity .12s ease-in-out, top .12s ease-in-out;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+        @media (prefers-reduced-motion: reduce) {
+            transition: none;
+        }
 
         &.always-visible {
             opacity: 1;
