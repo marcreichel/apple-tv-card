@@ -56,10 +56,12 @@ import './styles.scss';
         const translateX = ((width / 2 - posX)) * -1 / width * 10;
         const translateY = ((height / 2 - posY)) * -1 / height * 10;
 
+        const perspective = Math.max(width, height);
+
         if (!mediaQuery || mediaQuery.matches) {
-            element.style.transform = 'perspective(' + (width * 2) + 'px) translateZ(4rem)';
+            element.style.transform = 'perspective(' + (perspective * 2.5) + 'px) translateZ(4rem)';
         } else {
-            element.style.transform = 'perspective(' + (width * 2) + 'px) translateZ(4rem) rotateY(' + angleY + 'deg) rotateX(' + angleX + 'deg) translateX(' + translateX + 'px) translateY(' + translateY + 'px)';
+            element.style.transform = 'perspective(' + (perspective * 2.5) + 'px) translateZ(4rem) rotateY(' + angleY + 'deg) rotateX(' + angleX + 'deg) translateX(' + translateX + 'px) translateY(' + translateY + 'px)';
         }
 
         const paralaxContent = element.querySelector('.paralax-content');
@@ -71,6 +73,9 @@ import './styles.scss';
         const reflection = element.querySelector('.reflection');
 
         if (reflection && mediaQuery && !mediaQuery.matches) {
+            reflection.style.width = (perspective * 1.5) + 'px';
+            reflection.style.height = (perspective * 1.5) + 'px';
+            reflection.style.margin = (perspective * -.75) + 'px 0 0 ' + (perspective * -.75) + 'px';
             reflection.style.transform = 'translateY(' + (posY - (height / 2)) + 'px) translateX(' + ((width * .1) + (posX * .8)) + 'px)';
         }
     }
