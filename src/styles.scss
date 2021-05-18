@@ -10,9 +10,9 @@
     & > .apple-tv-card {
         width: 100%;
         border-radius: 1.5rem;
-        box-shadow: 0 .25rem .25rem 0 #0002;
-        transform-origin: 50% 50%;
-        transition: all 50ms ease-in-out;
+        box-shadow: 0 .25rem .25rem #0002;
+        transform-origin: 50%;
+        transition: transform 50ms ease-in-out;
         transform-style: preserve-3d;
         overflow: hidden;
         position: relative;
@@ -32,12 +32,18 @@
             left: 0;
             width: 150%;
             padding-bottom: 150%;
-            margin-top: -75%;
-            margin-left: -75%;
+            margin: -75% 0 0 -75%;
             pointer-events: none;
             background-image: radial-gradient(#fff8, transparent 70%);
             transform: translateY(-100%);
             z-index: 2;
+        }
+
+        & > .content {
+            display: block !important;
+            background-image: linear-gradient(to bottom, #555, #000);
+            background-position: center center;
+            padding-bottom: 58%;
         }
 
         & > .paralax-content {
@@ -49,6 +55,8 @@
             display: grid;
             place-items: center;
             pointer-events: none;
+            background-position: center center;
+            background-repeat: no-repeat;
             transition: transform 50ms ease-in-out;
             z-index: 1;
         }
@@ -62,8 +70,8 @@
         right: 0;
         opacity: 0;
         text-align: center;
-        font-size: 1.1em;
-        transition: opacity 120ms ease-in-out, top 120ms ease-in-out;
+        font-size: 1.1rem;
+        transition: opacity .12s ease-in-out, top .12s ease-in-out;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
         &.always-visible {

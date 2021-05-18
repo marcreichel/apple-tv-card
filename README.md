@@ -1,6 +1,9 @@
 # Apple TV Card (with JavaScript and CSS)
 
 ![version](https://img.shields.io/npm/v/apple-tv-card)
+![npm bundle size](https://img.shields.io/bundlephobia/min/tailwindcss-css-properties)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/tailwindcss-css-properties)
+![downloads](https://img.shields.io/npm/dt/tailwindcss-css-properties)
 ![license](https://img.shields.io/npm/l/apple-tv-card)
 [![Gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg)](https://gitmoji.dev)
 
@@ -16,22 +19,58 @@ An Apple TV Card/Widget with hover animation written in JavaScript and CSS.
 
 ## Installation
 
-Install via npm:
+### Via NPM
+
 ```bash
-  npm install apple-tv-card
+  npm install apple-tv-card --save
 ```
 
-or yarn:
+and add to your HTML:
+
+```html
+<link href="node_modules/apple-tv-card/dist/main.css" rel="stylesheet">
+<script src="node_modules/apple-tv-card/dist/main.js" defer></script>
+```
+
+### Via yarn
 
 ```bash
   yarn add apple-tv-card
+```
+
+and add to your HTML:
+
+```html
+<link href="node_modules/apple-tv-card/dist/main.css" rel="stylesheet">
+<script src="node_modules/apple-tv-card/dist/main.js" defer></script>
+```
+
+### Directly via CDN
+
+```html
+<link href="//unpkg.com/apple-tv-card@latest/dist/main.css" rel="stylesheet">
+<script src="//unpkg.com/apple-tv-card@latest/dist/main.js" defer></script>
 ```
 
 
 ## Setup
 
 
-_More info coming soon_
+Add the card to your HTML:
+
+```html
+<div class="apple-tv-card-container" style="width:300px;">
+    <div class="apple-tv-card">
+        <div class="content"></div>
+        <div class="paralax-content">
+            <div style="width:5em;height:5em;border:1em dashed white;"></div>
+        </div>
+    </div>
+    <div class="apple-tv-card-title">
+        Your awesome card
+    </div>
+</div>
+```
 
 
 ## Authors

@@ -1,0 +1,18 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: #f1f1f1;
+    font-family: 'Roboto', sans-serif;
+}
