@@ -2,12 +2,12 @@ import './styles.scss';
 
 (function() {
     document.querySelectorAll('.apple-tv-card').forEach(card => {
-        card.addEventListener('mouseenter', handleMove, false);
+        card.addEventListener('mouseenter', handleMove);
         card.addEventListener('touchstart', handleMove);
-        card.addEventListener('mousemove', handleMove, false);
+        card.addEventListener('mousemove', handleMove);
         card.addEventListener('touchmove', handleMove);
 
-        card.addEventListener('mouseleave', handleEnd, false);
+        card.addEventListener('mouseleave', handleEnd);
         card.addEventListener('touchend', handleEnd);
         card.addEventListener('touchcancel', handleEnd);
     });
@@ -15,12 +15,14 @@ import './styles.scss';
     function handleMove(event) {
         event.preventDefault();
 
-        this.classList.add('hover');
+        let element = event.target.closest('.apple-tv-card');
 
-        if (!this.querySelector('.reflection')) {
+        element.classList.add('hover');
+
+        if (!element.querySelector('.reflection')) {
             const reflection = document.createElement('span');
             reflection.classList.add('reflection');
-            this.prepend(reflection);
+            element.prepend(reflection);
         }
 
         let posX;
@@ -29,11 +31,15 @@ import './styles.scss';
         if (event.type === 'touchmove' || event.type === 'touchstart') {
             const touch = event.touches[0];
 
-            posX = touch.clientX - card.offsetLeft;
-            posY = touch.clientY - card.offsetTop;
+            const rect = element.getBoundingClientRect();
 
-            if (this !== document.elementFromPoint(touch.pageX, touch.pageY)) {
-                handleEnd();
+            posX = touch.pageX - rect.left;
+            posY = touch.pageY - rect.top;
+
+            const elementFromPoint = document.elementFromPoint(touch.pageX, touch.pageY);
+
+            if (!elementFromPoint || element !== elementFromPoint.closest('.apple-tv-card')) {
+                handleEnd(event);
                 return;
             }
         } else {
@@ -41,39 +47,41 @@ import './styles.scss';
             posY = event.offsetY;
         }
 
-        const width = this.clientWidth;
-        const height = this.clientHeight;
+        const width = element.clientWidth;
+        const height = element.clientHeight;
         const angleY = (width / 2 - posX) / width * 10;
         const angleX = (height / 2 - posY) * -1 / height * 10;
         const translateX = ((width / 2 - posX)) * -1 / width * 10;
         const translateY = ((height / 2 - posY)) * -1 / height * 10;
-        this.style.transform = 'translateZ(4rem) rotateY(' + angleY + 'deg) rotateX(' + angleX + 'deg) translateX(' + translateX + 'px) translateY(' + translateY + 'px)';
+        element.style.transform = 'translateZ(4rem) rotateY(' + angleY + 'deg) rotateX(' + angleX + 'deg) translateX(' + translateX + 'px) translateY(' + translateY + 'px)';
 
-        const paralaxContent = this.querySelector('.paralax-content');
+        const paralaxContent = element.querySelector('.paralax-content');
 
         if (paralaxContent) {
             paralaxContent.style.transform = 'translateX(' + (angleY * .4) + '%) translateY(' + (angleX * -.4) + '%)';
         }
 
-        const reflection = this.querySelector('.reflection');
+        const reflection = element.querySelector('.reflection');
 
         if (reflection) {
             reflection.style.transform = 'translateY(' + (posY - (height / 2)) + 'px) translateX(' + ((width * .1) + (posX * .8)) + 'px)';
         }
     }
 
-    function handleEnd() {
-        this.classList.remove('hover');
+    function handleEnd(event) {
+        let element = event.target.closest('.apple-tv-card');
 
-        this.style.transform = null;
+        element.classList.remove('hover');
 
-        const paralaxContent = this.querySelector('.paralax-content');
+        element.style.transform = null;
+
+        const paralaxContent = element.querySelector('.paralax-content');
 
         if (paralaxContent) {
             paralaxContent.style.transform = null;
         }
 
-        const reflection = this.querySelector('.reflection');
+        const reflection = element.querySelector('.reflection');
 
         if (reflection) {
             reflection.style.transform = null;
