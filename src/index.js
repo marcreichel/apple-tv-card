@@ -58,16 +58,20 @@ import './styles.scss';
 
         const perspective = Math.max(width, height);
 
-        if (!mediaQuery || mediaQuery.matches) {
-            element.style.transform = 'perspective(' + (perspective * 2.5) + 'px) translateZ(4rem)';
-        } else {
-            element.style.transform = 'perspective(' + (perspective * 2.5) + 'px) translateZ(4rem) rotateY(' + angleY + 'deg) rotateX(' + angleX + 'deg) translateX(' + translateX + 'px) translateY(' + translateY + 'px)';
+        const container = element.closest('.apple-tv-card-container');
+
+        if (container) {
+            container.style.perspective = (perspective * 2.5) + 'px';
         }
 
-        const paralaxContent = element.querySelector('.paralax-content');
+        if (mediaQuery && !mediaQuery.matches) {
+            element.style.transform = 'translateZ(4rem) rotateY(' + angleY + 'deg) rotateX(' + angleX + 'deg) translateX(' + translateX + 'px) translateY(' + translateY + 'px)';
+        }
 
-        if (paralaxContent && mediaQuery && !mediaQuery.matches) {
-            paralaxContent.style.transform = 'translateX(' + (translateX * -.65) + 'px) translateY(' + (translateY * -.65) + 'px)';
+        const parallaxContent = element.querySelector('.parallax-content');
+
+        if (parallaxContent && mediaQuery && !mediaQuery.matches) {
+            parallaxContent.style.transform = 'translateX(' + (translateX * -.65) + 'px) translateY(' + (translateY * -.65) + 'px)';
         }
 
         const reflection = element.querySelector('.reflection');
@@ -87,10 +91,10 @@ import './styles.scss';
 
         element.style.transform = null;
 
-        const paralaxContent = element.querySelector('.paralax-content');
+        const parallaxContent = element.querySelector('.parallax-content');
 
-        if (paralaxContent) {
-            paralaxContent.style.transform = null;
+        if (parallaxContent) {
+            parallaxContent.style.transform = null;
         }
 
         const reflection = element.querySelector('.reflection');
