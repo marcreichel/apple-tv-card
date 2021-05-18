@@ -75,7 +75,10 @@
         right: 0;
         opacity: 0;
         text-align: center;
-        font-size: 1.1rem;
+        font-size: 1.25rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         transition: opacity .12s ease-in-out, top .12s ease-in-out;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
