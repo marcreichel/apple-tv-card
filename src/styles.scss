@@ -9,7 +9,7 @@
 
     & > .apple-tv-card {
         width: 100%;
-        border-radius: 1.5vw;
+        border-radius: min(max(2vmax, 2rem), 3rem);
         box-shadow: 0 .25rem .25rem #0002;
         transform-origin: 50%;
         transition: transform 50ms ease-in-out;

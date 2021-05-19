@@ -1,13 +1,15 @@
 {
   "name": "apple-tv-card",
   "version": "0.0.0",
-  "description": "An Apple TV Card/Widget with hover animation written in JavaScript and CSS",
+  "description": "An Apple TV Card with hover animation and parallax effect",
   "keywords": [
     "apple-tv",
     "css",
     "javascript",
     "widget",
-    "card"
+    "card",
+    "parallax",
+    "parallax-effect"
   ],
   "scripts": {
     "build": "webpack --config webpack.config.js",

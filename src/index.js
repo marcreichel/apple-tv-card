@@ -25,6 +25,13 @@ import './styles.scss';
         card.addEventListener('touchcancel', handleEnd);
     });
 
+    window.addEventListener('resize', function() {
+        document.querySelectorAll('.apple-tv-card').forEach(card => {
+            const size = Math.max(card.clientWidth, card.clientHeight);
+            card.style.fontSize = (size / 3.5) + 'px';
+        });
+    });
+
     function handleStart(event) {
         let element = event.target.closest('.apple-tv-card');
         element.classList.add('hover');
@@ -32,8 +39,6 @@ import './styles.scss';
     }
 
     function handleMove(event) {
-        event.preventDefault();
-
         let element = event.target.closest('.apple-tv-card');
 
         const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
