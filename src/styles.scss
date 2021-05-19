@@ -59,8 +59,9 @@
             right: 0;
             bottom: 0;
             left: 0;
-            display: grid;
-            place-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             pointer-events: none;
             background-position: center center;
             background-repeat: no-repeat;
