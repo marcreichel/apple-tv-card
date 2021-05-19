@@ -2,8 +2,17 @@ import './styles.scss';
 
 (function() {
     document.querySelectorAll('.apple-tv-card').forEach(card => {
-        card.addEventListener('mouseenter', handleMove);
-        card.addEventListener('touchstart', handleMove);
+        const container = card.closest('.apple-tv-card-container');
+
+        const title = container.querySelector('.apple-tv-card-title');
+
+        if (title) {
+            container.classList.add('has-title');
+        }
+
+        card.addEventListener('mouseenter', handleStart);
+        card.addEventListener('touchstart', handleStart);
+
         card.addEventListener('mousemove', handleMove);
         card.addEventListener('touchmove', handleMove);
 
@@ -12,12 +21,16 @@ import './styles.scss';
         card.addEventListener('touchcancel', handleEnd);
     });
 
+    function handleStart(event) {
+        let element = event.target.closest('.apple-tv-card');
+        element.classList.add('hover');
+        handleMove(event);
+    }
+
     function handleMove(event) {
         event.preventDefault();
 
         let element = event.target.closest('.apple-tv-card');
-
-        element.classList.add('hover');
 
         const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 

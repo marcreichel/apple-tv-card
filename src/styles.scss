@@ -1,9 +1,9 @@
 .apple-tv-card-container {
     position: relative;
-    margin-bottom: 2.5rem;
+    width: 100%;
 
-    &.no-title {
-        margin-bottom: 0;
+    &.has-title {
+        margin-bottom: 3.5rem;
     }
 
     & > .apple-tv-card {
@@ -15,6 +15,10 @@
         transform-style: preserve-3d;
         overflow: hidden;
         position: relative;
+
+        &.not-rounded {
+            border-radius: 0;
+        }
 
         @media (prefers-reduced-motion: reduce) {
             transition: none;
