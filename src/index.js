@@ -6,9 +6,13 @@ import './styles.scss';
 
         const title = container.querySelector('.apple-tv-card-title');
 
-        if (title) {
-            container.classList.add('has-title');
+        if (!title) {
+            container.classList.add('no-title');
         }
+
+        const size = Math.max(card.clientWidth, card.clientHeight);
+
+        card.style.fontSize = (size / 3.5) + 'px';
 
         card.addEventListener('mouseenter', handleStart);
         card.addEventListener('touchstart', handleStart);
