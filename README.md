@@ -7,7 +7,7 @@
 ![license](https://img.shields.io/npm/l/apple-tv-card)
 [![Gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg)](https://gitmoji.dev)
 
-An Apple TV Card/Widget with hover animation written in JavaScript and CSS.
+An Apple TV Card with hover animation and parallax effect.
 
 
 ## Demo
