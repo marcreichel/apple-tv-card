@@ -39,6 +39,8 @@ import './styles.scss';
     }
 
     function handleMove(event) {
+        event.preventDefault(); // TODO: Need workaround for touch devices because this prevents clicking on links
+
         let element = event.target.closest('.apple-tv-card');
 
         const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
