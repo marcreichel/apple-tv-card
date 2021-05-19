@@ -62,7 +62,7 @@ Add the card to your HTML:
 <div class="apple-tv-card-container" style="width:300px;">
     <div class="apple-tv-card">
         <div class="content"></div>
-        <div class="paralax-content">
+        <div class="parallax-content">
             <div style="width:5em;height:5em;border:1em dashed white;"></div>
         </div>
     </div>
