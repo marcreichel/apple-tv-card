@@ -123,11 +123,12 @@ import './styles.scss';
             element.style.transform = 'translateZ(4rem) rotateY(' + angleY + 'deg) rotateX(' + angleX + 'deg) translateX(' + translateX + 'px) translateY(' + translateY + 'px)';
         }
 
-        const parallaxContent = element.querySelector('.parallax-content');
-
-        if (parallaxContent && mediaQuery && !mediaQuery.matches) {
-            parallaxContent.style.transform = 'translateX(' + (translateX * -.65) + 'px) translateY(' + (translateY * -.65) + 'px)';
-        }
+        element.querySelectorAll('.parallax-content').forEach((parallaxContent, number) => {
+            if (mediaQuery && !mediaQuery.matches) {
+                number++;
+                parallaxContent.style.transform = 'translateX(' + (translateX * -.65 * number) + 'px) translateY(' + (translateY * -.65 * number) + 'px)';
+            }
+        });
 
         const reflection = element.querySelector('.reflection');
 
@@ -151,11 +152,9 @@ import './styles.scss';
 
         element.style.transform = null;
 
-        const parallaxContent = element.querySelector('.parallax-content');
-
-        if (parallaxContent) {
+        element.querySelectorAll('.parallax-content').forEach(parallaxContent => {
             parallaxContent.style.transform = null;
-        }
+        });
 
         const reflection = element.querySelector('.reflection');
 
