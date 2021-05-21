@@ -25,8 +25,9 @@
             transition: none;
         }
 
-        &.hover {
+        &.hover, &:focus-within {
             box-shadow: 0 1.5rem 2rem .25rem #0005;
+            outline: none;
             transform: translateZ(4rem);
 
             & + .apple-tv-card-title {
@@ -47,6 +48,8 @@
 
         & > .content {
             display: block !important;
+            width: 100%;
+            border: none;
             background-image: linear-gradient(to bottom, #555, #000);
             background-position: center center;
             padding-bottom: 58%;

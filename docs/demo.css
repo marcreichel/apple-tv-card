@@ -15,4 +15,37 @@ body {
     min-height: 100vh;
     background: #f1f1f1;
     font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: max(2rem, min(5vmax, 4rem));
+    font-weight: 500;
+    margin-bottom: .5rem;
+}
+
+p {
+    font-size: max(1.25rem, min(2.5vmax, 1.75rem));
+    margin-top: .5rem;
+    margin-bottom: 3rem;
+}
+
+.grid {
+    display: grid;
+    place-items: center;
+}
+
+.docs-link {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+}
+
+a {
+    color: dodgerblue;
+    text-decoration: none;
+}
+
+a:hover {
+    color: royalblue;
+    text-decoration: underline;
 }

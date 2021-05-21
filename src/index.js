@@ -14,6 +14,12 @@ import './styles.scss';
 
         card.style.fontSize = (size / 3.5) + 'px';
 
+        const content = card.querySelector('.content');
+        content.setAttribute('tabindex', '0');
+
+        content.addEventListener('focus', handleFocus);
+        content.addEventListener('blur', handleBlur);
+
         card.addEventListener('mouseenter', handleStart);
         card.addEventListener('touchstart', handleStart);
 
@@ -32,8 +38,29 @@ import './styles.scss';
         });
     });
 
+    function handleFocus(event) {
+        let element = event.target.closest('.apple-tv-card');
+
+        const width = element.clientWidth;
+        const height = element.clientHeight;
+
+        const perspective = Math.max(width, height);
+
+        const container = element.closest('.apple-tv-card-container');
+
+        if (container) {
+            container.style.perspective = (perspective * 2.5) + 'px';
+        }
+    }
+
+    function handleBlur(event) {
+        let element = event.target.closest('.apple-tv-card');
+        cleanup(element);
+    }
+
     function handleStart(event) {
         let element = event.target.closest('.apple-tv-card');
+        element.querySelector('.content').focus();
         element.classList.add('hover');
         handleMove(event);
     }
@@ -42,6 +69,10 @@ import './styles.scss';
         event.preventDefault(); // TODO: Need workaround for touch devices because this prevents clicking on links
 
         let element = event.target.closest('.apple-tv-card');
+
+        if (!element.classList.contains('hover')) {
+            return;
+        }
 
         const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -110,7 +141,12 @@ import './styles.scss';
 
     function handleEnd(event) {
         let element = event.target.closest('.apple-tv-card');
+        const content = element.querySelector('.content');
+        content.blur();
+        cleanup(element);
+    }
 
+    function cleanup(element) {
         element.classList.remove('hover');
 
         element.style.transform = null;

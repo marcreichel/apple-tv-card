@@ -8,22 +8,41 @@
     <title>AppleTV Card</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link href="dist/main.css" rel="stylesheet">
     <link href="docs/demo.css" rel="stylesheet">
     <script src="dist/main.js" defer></script>
 </head>
 <body>
-<div class="apple-tv-card-container" style="width:300px;">
-    <div class="apple-tv-card">
-        <a href="https://github.com/marcreichel/apple-tv-card" class="content"></a>
-        <div class="parallax-content">
-            <div style="width:1em;height:1em;border:.20em dashed white;"></div>
+<div>
+    <h1>AppleTV Card</h1>
+    <p id="cta">Hover me</p>
+    <div class="grid">
+        <div class="apple-tv-card-container" style="width:300px;">
+            <div class="apple-tv-card">
+                <a href="https://github.com/marcreichel/apple-tv-card" class="content"></a>
+                <div class="parallax-content">
+                    <div style="width:1em;height:1em;border:.20em dashed white;"></div>
+                </div>
+            </div>
+            <div class="apple-tv-card-title">
+                Your awesome card
+            </div>
         </div>
     </div>
-    <div class="apple-tv-card-title">
-        Your awesome card
+    <div class="docs-link">
+        <a href="https://github.com/marcreichel/apple-tv-card#readme" target="_blank">
+            GitHub
+        </a>
     </div>
 </div>
+<script>
+    (function() {
+        const isTouch = ('ontouchstart' in window) ||
+            (navigator.maxTouchPoints > 0) ||
+            (navigator.msMaxTouchPoints > 0);
+        document.getElementById('cta').innerText = isTouch ? 'Touch me' : 'Hover me';
+    })();
+</script>
 </body>
 </html>
