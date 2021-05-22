@@ -1,6 +1,6 @@
 import './styles.scss';
 
-(function() {
+(function () {
     document.querySelectorAll('.apple-tv-card').forEach(card => {
         const container = card.closest('.apple-tv-card-container');
 
@@ -31,7 +31,7 @@ import './styles.scss';
         card.addEventListener('touchcancel', handleEnd);
     });
 
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
         document.querySelectorAll('.apple-tv-card').forEach(card => {
             const size = Math.max(card.clientWidth, card.clientHeight);
             card.style.fontSize = (size / 3.5) + 'px';
@@ -76,7 +76,7 @@ import './styles.scss';
 
         const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-        if (!element.querySelector('.shadow') && mediaQuery && !mediaQuery.matches) {
+        if (element.classList.contains('with-shadow') && !element.querySelector('.shadow') && mediaQuery && !mediaQuery.matches) {
             const shadow = document.createElement('span');
             shadow.classList.add('shadow');
             element.prepend(shadow);
@@ -148,13 +148,15 @@ import './styles.scss';
 
         const shadow = element.querySelector('.shadow');
 
-        if (shadow && mediaQuery && !mediaQuery.matches && posY < height / 3) {
-            const opacity = 1 / (height / 3) * ((height / 3) - posY);
-            shadow.style.opacity = opacity.toString();
-            shadow.style.boxShadow = 'inset 0 ' + opacity * -1 + 'em .4em -.5em rgba(0,0,0,' + Math.min(opacity, .35) + ')';
-        } else {
-            shadow.style.opacity = null;
-            shadow.style.boxShadow = null;
+        if (shadow) {
+            if (mediaQuery && !mediaQuery.matches && posY < height / 3) {
+                const opacity = 1 / (height / 3) * ((height / 3) - posY);
+                shadow.style.opacity = opacity.toString();
+                shadow.style.boxShadow = 'inset 0 ' + opacity * -1 + 'em .4em -.5em rgba(0,0,0,' + Math.min(opacity, .35) + ')';
+            } else {
+                shadow.style.opacity = null;
+                shadow.style.boxShadow = null;
+            }
         }
     }
 
