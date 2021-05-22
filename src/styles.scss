@@ -16,6 +16,7 @@
         transform-style: preserve-3d;
         overflow: hidden;
         position: relative;
+        z-index: 0;
 
         &.not-rounded {
             border-radius: 0;
@@ -36,14 +37,26 @@
             }
         }
 
+        & > .shadow {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            pointer-events: none;
+            background: #0002;
+            opacity: 0;
+            z-index: 3;
+        }
+
         & > .reflection {
             position: absolute;
             top: 0;
             left: 0;
             pointer-events: none;
-            background-image: radial-gradient(#fff5, transparent 70%);
+            background-image: radial-gradient(#fff7, transparent 70%);
             transform: translateY(-100%);
-            z-index: 2;
+            z-index: 4;
         }
 
         & > .content {
@@ -54,6 +67,12 @@
             background-image: linear-gradient(to bottom, #555, #000);
             background-position: center center;
             padding-bottom: 58%;
+            z-index: 1;
+            position: relative !important;
+
+            * {
+                pointer-events: none;
+            }
         }
 
         & > .parallax-content {
@@ -70,7 +89,7 @@
             background-position: center center;
             background-repeat: no-repeat;
             transition: transform 50ms ease-in-out;
-            z-index: 1;
+            z-index: 2;
 
             @media (prefers-reduced-motion: reduce) {
                 transition: none;
@@ -90,6 +109,8 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        color: white;
+        text-shadow: 0 1px black;
         transition: opacity .12s ease-in-out, bottom .09s ease-in-out;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 

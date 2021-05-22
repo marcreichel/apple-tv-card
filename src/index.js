@@ -76,6 +76,12 @@ import './styles.scss';
 
         const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+        if (!element.querySelector('.shadow') && mediaQuery && !mediaQuery.matches) {
+            const shadow = document.createElement('span');
+            shadow.classList.add('shadow');
+            element.prepend(shadow);
+        }
+
         if (!element.querySelector('.reflection') && mediaQuery && !mediaQuery.matches) {
             const reflection = document.createElement('span');
             reflection.classList.add('reflection');
@@ -123,10 +129,11 @@ import './styles.scss';
             element.style.transform = 'translateZ(4rem) rotateY(' + angleY + 'deg) rotateX(' + angleX + 'deg) translateX(' + translateX + 'px) translateY(' + translateY + 'px)';
         }
 
-        element.querySelectorAll('.parallax-content').forEach((parallaxContent, number) => {
+        element.querySelectorAll('.parallax-content').forEach((parallaxContent, layer) => {
             if (mediaQuery && !mediaQuery.matches) {
-                number++;
-                parallaxContent.style.transform = 'translateX(' + (translateX * -.65 * number) + 'px) translateY(' + (translateY * -.65 * number) + 'px)';
+                layer++;
+                const modifier = !parallaxContent.classList.contains('reverse') ? -.65 : .2;
+                parallaxContent.style.transform = 'translateX(' + (translateX * modifier * layer) + 'px) translateY(' + (translateY * modifier * layer) + 'px)';
             }
         });
 
@@ -137,6 +144,17 @@ import './styles.scss';
             reflection.style.height = (perspective * 1.5) + 'px';
             reflection.style.margin = (perspective * -.75) + 'px 0 0 ' + (perspective * -.75) + 'px';
             reflection.style.transform = 'translateY(' + (posY - (height / 2)) + 'px) translateX(' + ((width * .1) + (posX * .8)) + 'px)';
+        }
+
+        const shadow = element.querySelector('.shadow');
+
+        if (shadow && mediaQuery && !mediaQuery.matches && posY < height / 3) {
+            const opacity = 1 / (height / 3) * ((height / 3) - posY);
+            shadow.style.opacity = opacity.toString();
+            shadow.style.boxShadow = 'inset 0 ' + opacity * -1 + 'em .4em -.5em rgba(0,0,0,' + Math.min(opacity, .35) + ')';
+        } else {
+            shadow.style.opacity = null;
+            shadow.style.boxShadow = null;
         }
     }
 
@@ -160,6 +178,13 @@ import './styles.scss';
 
         if (reflection) {
             reflection.style.transform = null;
+        }
+
+        const shadow = element.querySelector('.shadow');
+
+        if (shadow) {
+            shadow.style.boxShadow = null;
+            shadow.style.opacity = null;
         }
     }
 })();
