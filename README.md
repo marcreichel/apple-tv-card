@@ -76,6 +76,10 @@ Add the card to your HTML:
 - [@marcreichel](https://www.github.com/marcreichel)
 
 
+## Known Issues
+- Card title not displayed correctly in Safari
+
+
 ## Contributing
 
 Contributions are always welcome!
