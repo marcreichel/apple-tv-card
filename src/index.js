@@ -133,7 +133,7 @@ import './styles.scss';
             if (mediaQuery && !mediaQuery.matches) {
                 layer++;
                 const modifier = !parallaxContent.classList.contains('reverse') ? -.65 : .2;
-                parallaxContent.style.transform = 'translateX(' + (translateX * modifier * layer) + 'px) translateY(' + (translateY * modifier * layer) + 'px)';
+                parallaxContent.style.transform = 'scale(1.075) translateX(' + (translateX * modifier * layer) + 'px) translateY(' + (translateY * modifier * layer) + 'px)';
             }
         });
 
