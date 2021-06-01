@@ -5,14 +5,14 @@ on:
     types: [published]
 
 jobs:
-  publish-npm:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-          registry-url: https://registry.npmjs.org/
+          registry-url: https://registry.npmjs.org
       - name: Check package version
         uses: technote-space/package-version-check-action@v1
         with:
@@ -22,17 +22,9 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-  publish-github:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v1
         with:
-          node-version: 12
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@marcreichel'
-      - run: npm ci
-      - run: npm build
+          registry-url: https://npm.pkg.github.com
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
