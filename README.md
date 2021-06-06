@@ -1,5 +1,6 @@
 # Apple TV Card (with JavaScript and CSS)
 
+[![CodeFactor](https://www.codefactor.io/repository/github/marcreichel/apple-tv-card/badge/main)](https://www.codefactor.io/repository/github/marcreichel/apple-tv-card/overview/main)
 ![version](https://img.shields.io/npm/v/apple-tv-card)
 ![downloads](https://img.shields.io/npm/dt/apple-tv-card)
 ![license](https://img.shields.io/npm/l/apple-tv-card)
