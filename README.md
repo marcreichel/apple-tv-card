@@ -29,10 +29,21 @@ npm install apple-tv-card --save
 #### yarn
 
 ```shell
-  yarn add apple-tv-card
+yarn add apple-tv-card
+```
+
+### Directly via CDN
+
+Insert inside the head of your HTML:
+
+```html
+<link href="//unpkg.com/apple-tv-card@latest/dist/main.css" rel="stylesheet">
+<script src="//unpkg.com/apple-tv-card@latest/dist/main.js" defer></script>
 ```
 
 ## Set up
+
+> **Please note**: This step is only necessary when you used a package manager for installation.
 
 ### Require the JavaScript
 
@@ -46,18 +57,7 @@ require('apple-tv-card');
 @import "~apple-tv-card/dist/main.css";
 ```
 
-### Directly via CDN
-
-Insert inside the head of your HTML:
-
-```html
-<link href="//unpkg.com/apple-tv-card@latest/dist/main.css" rel="stylesheet">
-<script src="//unpkg.com/apple-tv-card@latest/dist/main.js" defer></script>
-```
-
-
 ## Usage
-
 
 Add the card to your HTML:
 
