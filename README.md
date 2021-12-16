@@ -18,33 +18,37 @@ An Apple TV Card with hover animation and parallax effect.
 
 ## Installation
 
-### Via NPM
+### Via a package manager
 
-```bash
-  npm install apple-tv-card --save
+#### NPM
+
+```shell
+npm install apple-tv-card --save
 ```
 
-and add to your HTML:
+#### yarn
 
-```html
-<link href="node_modules/apple-tv-card/dist/main.css" rel="stylesheet">
-<script src="node_modules/apple-tv-card/dist/main.js" defer></script>
-```
-
-### Via yarn
-
-```bash
+```shell
   yarn add apple-tv-card
 ```
 
-and add to your HTML:
+## Set up
 
-```html
-<link href="node_modules/apple-tv-card/dist/main.css" rel="stylesheet">
-<script src="node_modules/apple-tv-card/dist/main.js" defer></script>
+### Require the JavaScript
+
+```javascript
+require('apple-tv-card');
+```
+
+### Import the CSS
+
+```css
+@import "~apple-tv-card/dist/main.css";
 ```
 
 ### Directly via CDN
+
+Insert inside the head of your HTML:
 
 ```html
 <link href="//unpkg.com/apple-tv-card@latest/dist/main.css" rel="stylesheet">
@@ -52,7 +56,7 @@ and add to your HTML:
 ```
 
 
-## Setup
+## Usage
 
 
 Add the card to your HTML:
@@ -60,9 +64,13 @@ Add the card to your HTML:
 ```html
 <div class="apple-tv-card-container" style="width:300px;">
     <div class="apple-tv-card">
-        <div class="content"></div>
+        <div class="content" style="background-image:url(...);">
+            <!-- Any non-parallax content -->
+        </div>
         <div class="parallax-content">
+            <!-- Example -->
             <div style="width:5em;height:5em;border:1em dashed white;"></div>
+            <!-- End: Example -->
         </div>
     </div>
     <div class="apple-tv-card-title">
@@ -72,12 +80,14 @@ Add the card to your HTML:
 ```
 
 
-## Authors
+## Credits
 
 - [@marcreichel](https://www.github.com/marcreichel)
+- [All Contributors](https://github.com/marcreichel/apple-tv-card/contributors)
 
 
 ## Known Issues
+
 - Card title not displayed correctly in Safari
 
 

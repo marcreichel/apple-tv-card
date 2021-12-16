@@ -2,6 +2,7 @@
   "name": "apple-tv-card",
   "version": "0.0.0",
   "description": "An Apple TV Card with hover animation and parallax effect",
+  "main": "dist/main.js",
   "keywords": [
     "apple-tv",
     "css",
