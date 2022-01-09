@@ -48,7 +48,7 @@ Insert inside the head of your HTML:
 ### Require the JavaScript
 
 ```javascript
-require('apple-tv-card');
+require('@marcreichel/apple-tv-card');
 ```
 
 ### Import the CSS
