@@ -31,6 +31,7 @@ jobs:
           node-version: ^14.17.3
           registry-url: 'https://npm.pkg.github.com'
           scope: '@marcreichel'
+      - run: echo "registry=https://npm.pkg.github.com/@marcreichel" > .npmrc
       - name: Check package version
         uses: technote-space/package-version-check-action@v1
         with:
