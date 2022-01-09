@@ -23,13 +23,13 @@ An Apple TV Card with hover animation and parallax effect.
 #### NPM
 
 ```shell
-npm install apple-tv-card --save
+npm install @marcreichel/apple-tv-card --save
 ```
 
 #### yarn
 
 ```shell
-yarn add apple-tv-card
+yarn add @marcreichel/apple-tv-card
 ```
 
 ### Directly via CDN
@@ -37,8 +37,8 @@ yarn add apple-tv-card
 Insert inside the head of your HTML:
 
 ```html
-<link href="//unpkg.com/apple-tv-card@latest/dist/main.css" rel="stylesheet">
-<script src="//unpkg.com/apple-tv-card@latest/dist/main.js" defer></script>
+<link href="//unpkg.com/@marcreichel/apple-tv-card@latest/dist/main.css" rel="stylesheet">
+<script src="//unpkg.com/@marcreichel/apple-tv-card@latest/dist/main.js" defer></script>
 ```
 
 ## Set up
@@ -54,7 +54,7 @@ require('apple-tv-card');
 ### Import the CSS
 
 ```css
-@import "~apple-tv-card/dist/main.css";
+@import "~@marcreichel/apple-tv-card/dist/main.css";
 ```
 
 ## Usage
