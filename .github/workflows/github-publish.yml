@@ -1,0 +1,24 @@
+name: GitHub Package
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 12
+          registry-url: https://npm.pkg.github.com
+      - name: Check package version
+        uses: technote-space/package-version-check-action@v1
+        with:
+          COMMIT_DISABLED: 1
+      - run: npm ci
+      - run: npm build
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
