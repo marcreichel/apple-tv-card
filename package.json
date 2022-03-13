@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/marcreichel/apple-tv-card#readme",
   "files": [
-    "LICENSE",
+    "LICENSE.md",
     "README.md",
     "src/index.js",
     "src/styles.scss",
