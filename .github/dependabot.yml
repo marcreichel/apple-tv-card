@@ -4,8 +4,6 @@ updates:
   - package-ecosystem: npm
     directory: "/"
     versioning-strategy: lockfile-only
-    reviewers:
-      - "marcreichel"
     commit-message:
       prefix: "⬆️"
     schedule:
