@@ -3,6 +3,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/marcreichel/apple-tv-card/badge/main)](https://www.codefactor.io/repository/github/marcreichel/apple-tv-card/overview/main)
 ![version](https://img.shields.io/npm/v/apple-tv-card)
 ![downloads](https://img.shields.io/npm/dt/apple-tv-card)
+[![](https://data.jsdelivr.com/v1/package/npm/@marcreichel/apple-tv-card/badge?style=rounded)](https://www.jsdelivr.com/package/npm/@marcreichel/apple-tv-card)
 ![license](https://img.shields.io/npm/l/apple-tv-card)
 [![Gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg)](https://gitmoji.dev)
 
@@ -13,7 +14,9 @@ An Apple TV Card with hover animation and parallax effect.
 
 ![Animation](docs/demo.gif)
 
-[Live-Demo](https://marcreichel.github.io/apple-tv-card/)
+[Live Demo](https://marcreichel.github.io/apple-tv-card/)
+
+[See It In Action](https://marcreichel.github.io/apple-tv/)
 
 
 ## Installation
@@ -37,13 +40,11 @@ yarn add @marcreichel/apple-tv-card
 Insert inside the head of your HTML:
 
 ```html
-<link href="//unpkg.com/@marcreichel/apple-tv-card@latest/dist/main.css" rel="stylesheet">
-<script src="//unpkg.com/@marcreichel/apple-tv-card@latest/dist/main.js" defer></script>
+<link href="//cdn.jsdelivr.net/npm/@marcreichel/apple-tv-card@latest/dist/main.css" rel="stylesheet">
+<script src="//cdn.jsdelivr.net/npm/@marcreichel/apple-tv-card@latest/dist/main.js" defer></script>
 ```
 
-## Set up
-
-> **Please note**: This step is only necessary when you used a package manager for installation.
+## Set up (only necessary for NPM and Yarn)
 
 ### Require the JavaScript
 
@@ -88,8 +89,7 @@ Add the card to your HTML:
 
 ## Known Issues
 
-- Card title not displayed correctly in Safari
-
+Any known issues can be found [here](https://github.com/marcreichel/apple-tv-card/issues?q=is%3Aopen+is%3Aissue+label%3Abug).
 
 ## Contributing
 
