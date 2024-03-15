@@ -1,11 +1,11 @@
 # Apple TV Card (with JavaScript and CSS)
 
-[![CodeFactor](https://www.codefactor.io/repository/github/marcreichel/apple-tv-card/badge/main)](https://www.codefactor.io/repository/github/marcreichel/apple-tv-card/overview/main)
-![version](https://img.shields.io/npm/v/@marcreichel/apple-tv-card)
-![downloads](https://img.shields.io/npm/dt/@marcreichel/apple-tv-card)
-[![](https://data.jsdelivr.com/v1/package/npm/@marcreichel/apple-tv-card/badge?style=rounded)](https://www.jsdelivr.com/package/npm/@marcreichel/apple-tv-card)
-![license](https://img.shields.io/npm/l/@marcreichel/apple-tv-card)
-[![Gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg)](https://gitmoji.dev)
+![version](https://img.shields.io/npm/v/@marcreichel/apple-tv-card?style=for-the-badge)
+![downloads](https://img.shields.io/npm/dt/@marcreichel/apple-tv-card?style=for-the-badge)
+[![](https://img.shields.io/jsdelivr/npm/hm/%40marcreichel%2Fapple-tv-card?style=for-the-badge)](https://www.jsdelivr.com/package/npm/@marcreichel/apple-tv-card)
+[![CodeFactor](https://img.shields.io/codefactor/grade/github/marcreichel/apple-tv-card?style=for-the-badge
+)](https://www.codefactor.io/repository/github/marcreichel/apple-tv-card/overview/main)
+![license](https://img.shields.io/npm/l/@marcreichel/apple-tv-card?style=for-the-badge)
 
 An Apple TV Card with hover animation and parallax effect.
 
